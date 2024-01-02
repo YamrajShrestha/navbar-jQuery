@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header></header>
+    <header>
+        <img class="a" src="img/logo4.png" alt="">
+        <img class="b" src="img/logo8.png" alt="">
+    </header>
+    <div class="notice">
+      <span>X</span>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
@@ -15,10 +21,19 @@
         $(window).scroll(function () {
           if ($(this).scrollTop() > 250) {
             $("header").addClass("new");
+            $('.a').hide()
+            $('.b').show()
+            $('.notice').show()
           } else {
             $("header").removeClass("new");
+            $('.b').hide()
+            $('.a').show()
+            $('.notice').hide()
           }
         });
+        $('span').click(function(){
+          $('.notice').remove()
+        })
       });
     </script>
   </body>
